@@ -1,0 +1,151 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    
+<head>
+  <title> My Product </title>
+      <link rel = 'stylesheet' type ='text/css' href="main.css">
+      <meta charset="utf-8">
+      <meta name='viewport' content="width=divice-width, initial-scale=1.0">
+</head>
+<header>
+  <!-- <h1 class="logo">Logo</h1> -->
+
+  <div class ='logo'> 
+      <!-- /<img src='welcome.gif' height="80px" width='120px'> -->
+      <h3 color='white'><i>XMax Fashion 🔥</i></h3>
+</div>
+
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <nav>
+    <ul>
+      <li><a href="home.html">HOME</a></li>     
+      <li class="selected"><a href="signup.html">Sign up</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallary.html">Gallery</a></li>
+    </ul>
+  </nav>
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+   
+</header>
+<body>
+<div class="content">
+  <!-- <div class='firstimage'>
+      <img class = 'firstimage' src='product_urban_scents.gif'>
+  </div>
+  <div class="firsttext">
+      
+    The decision about what to put into your paragraphs begins with the germination of a seed of ideas; this “germination process” is better known as brainstorming. There are many techniques for brainstorming; whichever one you choose, this stage of paragraph development cannot be skipped. Bsdkjfhagfhadgjvadjghjadgfadfgaduilding paragraphs can be like building a skyscraper: there must be a well-planned foundation that supports what you are building. Any cracks, inconsistencies, or other corruptions of the foundation can cause your whole paper to crumble.         
+      
+  </div>
+</div> -->
+
+<form id="contact-form" method="post" action="home.html">
+			
+  <div class="row">
+    <div class="col-30">
+      <label for="fname">Name</label>
+    </div>
+    
+    <div class="col-80">
+      <input type="text" placeholder="Eg: Alex" pattern="[a-zA-z]{1,25}" class="form-control" name="name" id="name" autofocus required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="phone">Phone No.</label>
+    </div>
+    
+    <div class="col-80">
+       <input type="tel" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="Eg. 5556668888" required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="items">Enter no.of items</label>
+    </div>
+    
+    <div class="col-80">
+      <input type="text" placeholder="Enter no.of items" pattern="[0-9]{1,4}" class="form-control" name="items" id="items" required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="email">E-mail</label>
+    </div>
+    <div class="col-80">
+      <input type="text" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" name="email" id="email" required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="thing">Select an item</label>
+    </div>
+    
+      <input list="things" name="things" class = 'dropdown' placeholder="Select an item" required>
+        <datalist id="things">
+          <option value="Jeans">
+          <option value="Denim Jackets">
+          <option value="Hats">
+          <option value="Accessories">
+          <option value="Watches">
+        </datalist>
+    </div>
+  
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="radio">Select an option</label>
+    </div>
+    <div class="col-80">
+      <input type="radio" name="gender" value="male" checked required> Male<br>
+      <input type="radio" name="gender" value="female" required> Female<br>
+      <input type="radio" name="gender" value="other" required> Other
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="box">Select an option</label>
+    </div>
+    
+    <div class="col-80">
+      <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+      <input type="checkbox" name="vehicle2" value="Car"> I have a car
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-30">
+      <label for="msg">Message</label>
+    </div>
+    
+    <div class="col-80">
+       <textarea name="message" rows="10" cols="30" placeholder="Leave your feedback" required></textarea>
+    </div>
+  </div>
+          
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  
+</form>
+
+
+
+
+<div class="footer">
+  <div class="map-div">
+      <h3>contact Us 📱: 9078563407  🏠 : montreal </h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224567.66257390968!2d76.84935039231331!3d28.423187473286248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1576321553954!5m2!1sen!2sin" width="80%" height="95" ></iframe>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+:root {
+    /* --background: rgba(0, 214, 170, .85); */
+    --background:rgba(20, 25, 96, 0.85);
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      /* background: #222; */
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      background-image: linear-gradient(white, rgba(20, 25, 96, 0.85));
+  }
+  
+  .content {
+    padding-top: 80px;
+    /* height: 200vh; */
+    background-image: url(//unsplash.it/1000/1000);
+    /* background-color: #333; */
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    /* place-items: center; */
+  }
+  
+  /* navigation styles start here */
+  
+  header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 80px;
+  }
+  
+  /* changed this from the tutorial video to
+     allow it to gain focus, making it tabbable */
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #000;
+  }
+  
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  .footer {
+      position: relative;    
+      left: 0;
+      bottom: 0;
+      height: 100px;
+      width: 100%;
+      /* background-color:gray; */
+      background-color: rgba(20, 25, 96, 0.85);
+      color: white;
+      text-align: center;
+   }
+   .firstimage{
+        height:100%;
+        width:100%;        
+    }  
+    .fling-minislide img{
+        height:100%;
+        width:100%;     
+    }
+   
+   .namediv{
+    /* padding-top:20px ; */
+    float: left;        
+    }
+    .logo img{
+        padding-top:20px;       
+         
+    }
+
+    .logo{
+        padding-top: 10px;
+        
+        color: white;
+    }
+    .logo{
+        animation: shake 3.5s; 
+        animation-iteration-count: infinite; 
+    }
+
+    .footer {       
+        height: 180px;       
+    }    
+    .firsttext{
+        /* float: right;     */
+        /* height:200px; */
+        width:100%;
+        background-image: linear-gradient(white, rgba(20, 25, 96, 0.85));
+    }
+    li.selected a { color: #FF0000; }
+    @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+
+
+      .fling-minislide {width:100%; height:0px; padding-bottom: 50%; overflow:hidden; position:relative; }
+      .fling-minislide img{ position:absolute; animation:fling-minislide 20s infinite; opacity:0; width: 100%; height: auto;}
+  
+      @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+      .fling-minislide img:nth-child(4){animation-delay:0s;}
+      .fling-minislide img:nth-child(3){animation-delay:5s;}
+      .fling-minislide img:nth-child(2){animation-delay:10s;}
+      .fling-minislide img:nth-child(1){animation-delay:15s;}
+
+
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
+    }
+  
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+    
+    .logo {
+        color:white;
+        float: left;
+        padding-top: 10px;
+        grid-column: 2 / 3;
+    }
+    
+    nav {
+       /* all: unset; this causes issues with Edge, since it's unsupported */
+      
+      /* the following lines are not from my video, but add Edge support */
+      position: relative;
+      text-align: left;
+      transition: none;
+      transform: scale(1,1);
+      background: none;
+      top: initial;
+      left: initial;
+      /* end Edge support stuff */
+      
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+    
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: black;
+      position: absolute;
+      top: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+      transform: scale(1,1);
+    }
+
+    .footer {
+        position: relative !important;    
+        left: 0 !important;
+        bottom: 0 !important;
+        /* height: 150px!important; */
+        width: 100%!important;
+        /* background-color:gray !important; */
+        color: white !important;
+        /* background-color:gray !important; */
+        background-color:rgba(20, 25, 96, 0.85);
+        text-align: center !important;
+    }    
+     .map-div{    
+         /* float:right !important; */
+         height: 95px !important;
+         /* background-color:gray !important; */
+         /* background-color:rgba(20, 25, 96, 0.85); */
+     }
+     .bottom-center{
+        /* background-color:rgba(20, 25, 96, 0.85); */
+         padding-top:20px !important;
+         margin-left: 450px !important;
+         width:120px !important;
+         text-align: center !important;
+     }
+     .phone{
+         float: left !important;
+     }
+
+    .firstimage{
+        float: right;
+        height:950px;
+        width:100%;       
+        overflow: auto;
+    }  
+    .firsttext{
+        padding-top: 20px;
+        height:200px;
+        width:100%;
+        background-color:rgba(20, 25, 96, 0.85);
+        background-image: linear-gradient(white, rgba(20, 25, 96, 0.85));
+        /* float:right;                 */
+    }
+    /* li.selected a { color: #FF0000; } */
+    /* li.selected a { color: #FF0000; }  */
+    a:visited {
+        color: pink;
+    }    
+
+
+    .fling-minislide {width:100%; height:100%; overflow:hidden;position:relative; }
+    .fling-minislide img{ position:absolute; animation:fling-minislide 20s infinite; opacity:0; width: 100%; height: 100%;}
+
+    @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+    .fling-minislide img:nth-child(4){animation-delay:0s;}
+    .fling-minislide img:nth-child(3){animation-delay:5s;}
+    .fling-minislide img:nth-child(2){animation-delay:10s;}
+    .fling-minislide img:nth-child(1){animation-delay:15s;}
+
+
+    .youtubevideo{
+      width:80%;
+      height:100% !important;
+    }
+    
+   
+}
+  
+input[type=text],[type=tel], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  /* padding-left:10px ; */
+  text-align:center;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border-style: solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+/* .container {
+  border-radius: 5px;
+  background-color: lightgray;
+  padding: 50px;
+} */
+
+/* Floating column for labels: 25% width */
+.col-30 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-80 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-30, .col-80, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+ 
+}
+
+#contact-form{
+  background-image: linear-gradient(white, rgba(20, 25, 96, 0.85));
+}
+.dropdown{
+  margin-top:20px;
+}
+.youtubevideo{
+  width:90%;
+  height:500px;
+}
+
+/* images css */
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row1 {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column1 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column1 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  div.gallery {
+    height: auto !important;
+  }
+  .column1 {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;* {
+  box-sizing: border-box;
+}
+
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column1 {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 100%;
+  height:300px;
+}
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-image img{
+  width:90%;   
+  padding-left: 10%;
+  border-color: black;
+  border-style: solid;
+  border: 10px;
+  height:100%;
+}
